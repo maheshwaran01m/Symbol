@@ -1837,3 +1837,31 @@ public extension NSImage {
   }
 }
 #endif
+
+// MARK: - Extensions
+
+#if os(iOS) || os(tvOS)
+
+public extension UIImageView {
+  
+  func size(_ size: CGFloat, scale: UIImage.SymbolScale = .medium, weight: UIImage.SymbolWeight = .regular) {
+    preferredSymbolConfiguration = .init(pointSize: size, weight: weight, scale: scale)
+  }
+  
+  func size(_ font: UIFont) {
+    preferredSymbolConfiguration = .init(font: font)
+  }
+}
+#else
+
+public extension NSImageView {
+  
+  func size(_ size: CGFloat, scale: NSImage.SymbolScale = .medium, weight: NSFont.Weight = .regular) {
+    symbolConfiguration = NSImage.SymbolConfiguration(pointSize: size, weight: weight, scale: scale)
+  }
+  
+  func size(_ style: NSFont.TextStyle, scale: NSImage.SymbolScale) {
+    symbolConfiguration = .init(textStyle: style, scale: scale)
+  }
+}
+#endif
