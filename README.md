@@ -16,7 +16,7 @@ https://github.com/maheshwaran01m/Symbol.git
 
 Usage:
 ```
-import LayoutConstraint
+import Symbol
 
 class ViewController: UIViewController {
 
@@ -29,8 +29,10 @@ class ViewController: UIViewController {
   let imageView = UIImageView()
   imageView.image = .star
 
-   view.addSubview(imageView)
+  view.addSubview(imageView)
   imageView.backgroundColor = .secondarySystemBackground
+
+ imageView.frame = view.bounds
 }
 
 ```
