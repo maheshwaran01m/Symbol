@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 
  private func setupImage() {
   let imageView = UIImageView()
-  imageView.image = .star
+  imageView.image = Symbol.star
 
   view.addSubview(imageView)
   imageView.backgroundColor = .secondarySystemBackground
